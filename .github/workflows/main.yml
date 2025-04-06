@@ -3,8 +3,8 @@ name: Terraform Deployment
 on:
   push:
     branches:
-      - none
-  workflow_dispatch:
+      - main           
+  workflow_dispatch:   
 
 jobs:
   terraform:
@@ -21,7 +21,7 @@ jobs:
           tenant-id: ${{ secrets.ARM_TENANT_ID }}
           subscription-id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
           client-secret: ${{ secrets.ARM_CLIENT_SECRET }}
-          
+
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1
         with:
